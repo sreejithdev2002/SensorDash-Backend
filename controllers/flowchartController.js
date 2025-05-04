@@ -41,34 +41,4 @@ const Load = async (req, res) => {
   }
 };
 
-// Update Node Name (or other element properties)
-// const Update = async (req, res) => {
-//   const { id } = req.params; // Flowchart ID
-//   const { nodeId, newLabel } = req.body; // nodeId to identify the node and newLabel for the new name
-
-//   try {
-//     const flowchart = await Flowchart.findOne({ userId: req.user.id });
-
-//     if (!flowchart) {
-//       return res.status(404).send("Flowchart not found");
-//     }
-
-//     // Find the specific node to update
-//     const node = flowchart.nodes.find((node) => node.id === nodeId);
-
-//     if (node) {
-//       // Update the node's label (name)
-//       node.data.label = newLabel;
-//     } else {
-//       return res.status(404).send("Node not found");
-//     }
-
-//     await flowchart.save();
-//     res.status(200).send("Node name updated!");
-//   } catch (error) {
-//     console.error("Error updating node name:", error);
-//     res.status(500).send("Error updating node name");
-//   }
-// };
-
 module.exports = { Save, Load };
